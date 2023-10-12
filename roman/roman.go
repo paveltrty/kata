@@ -42,26 +42,25 @@ var maxTable = []int{
 	1,
 }
 
-func RomanToNumber(n string) int {
-	out := 0
-	ln := len(n)
-	for i := 0; i < ln; i++ {
+func ToNumber(n string) int {
+	res := 0
+	for i := 0; i < len(n); i++ {
 		c := string(n[i])
-		vc := num[c]
-		if i < ln-1 {
-			cnext := string(n[i+1])
-			vcnext := num[cnext]
-			if vc < vcnext {
-				out += vcnext - vc
+		cD := num[c]
+		if i < len(n)-1 {
+			cNext := string(n[i+1])
+			cDNext := num[cNext]
+			if cD < cDNext {
+				res += cDNext - cD
 				i++
 			} else {
-				out += vc
+				res += cD
 			}
 		} else {
-			out += vc
+			res += cD
 		}
 	}
-	return out
+	return res
 }
 
 func NumberToRoman(n int) string {

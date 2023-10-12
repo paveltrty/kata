@@ -71,8 +71,8 @@ func arabianCalculation(a string, b string, operator string) int {
 }
 
 func romanCalculation(a string, b string, operator string) string {
-	aD := roman.RomanToNumber(a)
-	bD := roman.RomanToNumber(b)
+	aD := roman.ToNumber(a)
+	bD := roman.ToNumber(b)
 	result := 0
 
 	switch operator {
